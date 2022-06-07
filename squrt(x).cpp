@@ -15,8 +15,6 @@ public:
             else
                 h=m-1;
         }
-     if(l*l>x)
-         return l-1;
      return h;
     }
 };
