@@ -1,19 +1,22 @@
-    vector<int>ans;
-    
-    void help(vector<int>&arr, int N,int i, int &sum)
+vector<int>ans;
+    void help(vector<int> &arr,int i,int &sum)
     {
-        
-        if(i==N){ans.push_back(sum); return;}
+        if(i==arr.size())
+        {
+            ans.push_back(sum);
+            return;
+        }
         
         sum+=arr[i];
-        help(arr,N,i+1,sum);
+        help(arr,i+1,sum);
         sum-=arr[i];
-        help(arr,N,i+1,sum);
-        return;
+        help(arr,i+1,sum);
+        
     }
+    
     vector<int> subsetSums(vector<int> arr, int N)
     {
         int sum=0;
-        help(arr,N,0,sum);
+        help(arr,0,sum);
         return ans;
     }
